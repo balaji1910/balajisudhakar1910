@@ -1,0 +1,80 @@
+package com.objectfrontier.training;
+
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Field;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+public class MyJavaExec {
+
+    void className() {
+
+        // String st = new String();
+        // Class cl = st.getClass();
+        System.out.println("Complied from " + "\"" + String.class.getSimpleName() + ".java\"");
+    }
+    void interfaceName() {
+
+        String str = new String();
+        Class myjava = str.getClass();
+        
+        Class[] interfaceName = myjava.getInterfaces();
+        int mod = myjava.getModifiers();
+        String modifier = Modifier.toString(mod);
+        System.out.print(modifier);
+        System.out.print(myjava + " implements ");
+        for (int index = 0; index < interfaceName.length; index++ ) {
+
+            System.out.print(interfaceName[index].getName() + " ");
+        }
+        System.out.println(" { \n");
+    }
+
+    void methodName() {
+
+        String st = new String();
+        Class cl = st.getClass();
+       
+       Method[] method = cl.getDeclaredMethods();
+        System.out.println("\n");
+        for (int index = 0; index < method.length; index++) {
+
+            System.out.println("\t" + method[index] + ";");
+        }
+        System.out.println("}");
+    }
+
+    void fieldName() {
+        String st = new String();
+        Class cl = st.getClass();
+        
+        Field[] field = cl.getFields();
+        //String f = Modifier.toString(field);
+        for (int i = 0; i < field.length; i++) {
+            System.out.println("\t" + field[i]);
+        }
+    }
+
+    void constructorName() {
+
+        String st = new String();
+        Class cl = st.getClass();
+        
+        Constructor[] construct = cl.getConstructors();
+        System.out.println("\n");
+        for (int index = 0; index < construct.length; index++) {
+            System.out.println("\t" + construct[index]);
+        }
+        
+    }
+
+    public static void main(String[] args) {
+
+        MyJavatp myjavatp = new MyJavatp();
+        myjavatp.className();
+        myjavatp.interfaceName();
+        myjavatp.fieldName();
+        myjavatp.constructorName();
+        myjavatp.methodName();
+    }
+}
