@@ -21,7 +21,7 @@ public class MyJavaExec {
         Class[] interfaceName = myjava.getInterfaces();
         int mod = myjava.getModifiers();
         String modifier = Modifier.toString(mod);
-        System.out.print(modifier);
+        System.out.print(modifier + " ");
         System.out.print(myjava + " implements ");
         for (int index = 0; index < interfaceName.length; index++ ) {
 
