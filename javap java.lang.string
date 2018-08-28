@@ -11,18 +11,21 @@ public class MyJavaExec {
 
         // String st = new String();
         // Class cl = st.getClass();
-        System.out.println("Complied from " + "\"" + String.class.getSimpleName() + ".java\"");
+        
+    	System.out.println("Complied from " + "\"" + String.class.getSimpleName() + ".java\"");
     }
+    
     void interfaceName() {
 
-        String str = new String();
-        Class myjava = str.getClass();
+        // String str = new String();
+        // Class myjava = str.getClass();
         
-        Class[] interfaceName = myjava.getInterfaces();
-        int mod = myjava.getModifiers();
+        Class[] interfaceName = String.class.getInterfaces();
+        int mod = String.class.getModifiers();
         String modifier = Modifier.toString(mod);
+        
         System.out.print(modifier + " ");
-        System.out.print(myjava + " implements ");
+        System.out.print(String.class + " implements ");
         for (int index = 0; index < interfaceName.length; index++ ) {
 
             System.out.print(interfaceName[index].getName() + " ");
@@ -32,49 +35,47 @@ public class MyJavaExec {
 
     void methodName() {
 
-        String st = new String();
-        Class cl = st.getClass();
-       
-       Method[] method = cl.getDeclaredMethods();
+        // String st = new String();
+        // Class cl = st.getClass();
+        
+        Method[] method = String.class.getDeclaredMethods();
         System.out.println("\n");
         for (int index = 0; index < method.length; index++) {
 
-            System.out.println("\t" + method[index] + ";");
+            System.out.println("  " + method[index] + ";");
         }
         System.out.println("}");
     }
 
     void fieldName() {
-        String st = new String();
-        Class cl = st.getClass();
         
-        Field[] field = cl.getFields();
+    	// String st = new String();
+        // Class cl = st.getClass();
+        
+        Field[] field =  String.class.getFields();
         //String f = Modifier.toString(field);
         for (int i = 0; i < field.length; i++) {
-            System.out.println("\t" + field[i]);
+            System.out.println("  " + field[i] + ";");
         }
     }
 
     void constructorName() {
 
-        String st = new String();
-        Class cl = st.getClass();
-        
-        Constructor[] construct = cl.getConstructors();
+        Constructor[] construct =  String.class.getConstructors();
         System.out.println("\n");
         for (int index = 0; index < construct.length; index++) {
-            System.out.println("\t" + construct[index]);
+            System.out.println("  " + construct[index] + ";");
         }
         
     }
 
     public static void main(String[] args) {
 
-        MyJavatp myjavatp = new MyJavatp();
-        myjavatp.className();
-        myjavatp.interfaceName();
-        myjavatp.fieldName();
-        myjavatp.constructorName();
-        myjavatp.methodName();
+        MyJavaExec myjavaexec = new MyJavaExec();
+        myjavaexec.className();
+        myjavaexec.interfaceName();
+        myjavaexec.fieldName();
+        myjavaexec.constructorName();
+        myjavaexec.methodName();
     }
 }
