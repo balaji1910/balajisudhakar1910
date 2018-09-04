@@ -1,0 +1,158 @@
+// service
+package com.ofs.training;
+
+public class EnumEqualOperation {
+	
+	enum Gender {
+		
+		male,
+		female,
+		transgender
+	}
+
+	private static final String ERR_CODE = "error";
+	
+	public boolean equalOperator(Gender genderType1, Gender genderType2 ) {
+		
+		if(genderType1 == null || genderType2 == null) {
+			throw new RuntimeException("Null value found in the parameter");
+		}
+		
+		try {
+			return (genderType1 == genderType2);
+		} catch(Exception e) {
+			throw new RuntimeException(ERR_CODE);
+		}
+	}
+	
+	public boolean equalMethod(Gender genderType1, Gender genderType2) {
+		
+		if(genderType1 == null || genderType2 == null) {
+			throw new RuntimeException("Null value found in the parameter");
+		}
+		
+		try {
+			return (genderType1.equals(genderType2));
+		} catch(Exception e) {
+			throw new RuntimeException(ERR_CODE); 
+		}
+	}	
+
+	public static void main(String[] args) {
+		
+		EnumEqualOperation enumEqual = new EnumEqualOperation();
+		enumEqual.equalOperator(Gender.male, Gender.female);
+	}
+}
+
+
+// test code
+package com.ofs.training;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.ofs.training.EnumEqualOperation.Gender;
+
+public class EnumEqualOperationTest {
+
+	EnumEqualOperation enumEqual;
+	
+	
+	@BeforeClass
+	private void init() {
+		
+		enumEqual = new EnumEqualOperation();
+	}
+	
+	
+	@Test(dataProvider = "testEnumEqualOperator_positiveDP")
+	private void testEnumEqualOperator_positive(Gender genderType1, Gender genderType2, boolean expectedOutput) {
+	
+		// expected output from data provider
+		// actual output from service method
+		// compare both (in try and catch)
+		boolean actualOutput = enumEqual.equalOperator(genderType1, genderType2);
+		
+		try {
+			Assert.assertEquals(actualOutput, expectedOutput); 
+		} catch (Exception e) {
+			Assert.fail("Unexpected exception for input "
+			+ genderType1
+            + ", "
+            + genderType2
+            + "Expected result is "
+            + expectedOutput,
+            e);			
+		}
+	}
+	
+	
+	@Test(dataProvider = "testEnumEqualMethod_positiveDP")
+	private void testEnumEqualMethod_positive(Gender genderType1, Gender genderType2, boolean anticipatedOutput){
+		
+		// expected output from data provider
+		// actual output from service method
+		// compare both (in try and catch)
+		boolean certainOutput = enumEqual.equalMethod(genderType1, genderType2);
+		
+		try {
+			Assert.assertEquals(certainOutput, anticipatedOutput); 
+				} catch (Exception e) {
+					Assert.fail("Unexpected exception for input "
+					+ genderType1
+		            + ", "
+		            + genderType2
+		            + "Expected result is "
+		            + anticipatedOutput,
+		            e);
+		}
+	}
+	
+	
+	@DataProvider
+	private Object[][] testEnumEqualOperator_positiveDP() {
+		
+		return new Object[][] {
+			{ Gender.male, Gender.male, true }
+		};
+		
+	}
+	
+
+	@DataProvider
+	private Object[][] testEnumEqualMethod_positiveDP() {
+		
+		return new Object[][] {
+			{ Gender.transgender, Gender.transgender, true }
+		};
+	}
+	
+	
+	@Test(dataProvider = "testEnumEqualMethod_negativeDP")
+	private void testEnumEqualOperator_negative(Gender genderType1, Gender genderType2, String expected) {
+		
+		
+		
+		try {
+			enumEqual.equalOperator(genderType1, genderType2);
+			Assert.fail("Expected an exception.");
+        } catch (Exception e) {
+            Assert.assertEquals(e.getMessage(), expected);
+        }
+    }
+	
+	@DataProvider
+	private Object[][] testEnumEqualMethod_negativeDP() {
+		
+		return new Object[][] {
+				{ Gender.female, null, "Null value found in the parameter" },
+				{ null, Gender.male, "Null value found in the parameter"},
+				{ null, null , "Null value found in the parameter"}
+			};
+		}
+	}
+
+
