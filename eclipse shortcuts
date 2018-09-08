@@ -1,0 +1,156 @@
+
+Batch 1
+Update with this setup - this is 64 bit eclipse. Retain and use your current workspace.
+
+Batch 2
+Eclipse with TestNG Plugin:
+
+    \\nas\Distribution\env\tools\eclipse-java-mars-2-win32-x86_64.zip
+    Paste and do 'Extract Here' in D:\tools\eclipse
+        After extraction, structure will be D:\tools\eclipse\eclipse-java-mars-2-win32-x86_64\eclipse
+    Create env path shortcut as "mars" for D:\tools\eclipse\eclipse-java-mars-2-win32-x86_64\eclipse\eclipse.exe
+
+Eclipse Workspace :
+
+    \\nas\Distribution\env\profiles\eclipse.mars.workspace.zip
+    Paste and do 'Extract Here' in D:\dev\training
+        After extraction, structure will be D:\dev\training\.metadata
+    Start eclipse with D:\dev\training as workspace location
+
+Critical Shortcuts:
+
+    Alt+Shift+S
+    Alt+Shift+T
+    Ctrl+O
+    Ctrl+1
+    Ctrl+3
+    Ctrl+.
+
+Here are some Eclipse help docs:
+
+    Basics: Must read every sub topic as well
+        http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-2.htm&cp=1_1_0_0
+    Project Creation
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-DetectingExistingLayout.htm?cp=1_1_1_0
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-OrganizingSources.htm?cp=1_1_1_1
+    Arranging Views
+        http://help.eclipse.org/mars/topic/org.eclipse.platform.doc.user/gettingStarted/qs-39d.htm?cp=0_1_0_14_0
+        http://help.eclipse.org/mars/topic/org.eclipse.platform.doc.user/gettingStarted/qs-39g.htm?cp=0_1_0_14_3
+    Problems View
+        http://help.eclipse.org/mars/topic/org.eclipse.platform.doc.user/concepts/cprbview.htm?cp=0_2_4_5
+    Some of Java 5 options
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-with-j2se50.htm?cp=1_1_2
+    Some of Java 7 options
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/gettingStarted/qs-with-java7.htm?cp=1_1_3
+    Quick Fix
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/reference/ref-java-editor-quickfix.htm
+    Quick Assists
+        http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-2.htm&cp=1_1_0_0
+    Searching
+        http://help.eclipse.org/mars/topic/org.eclipse.platform.doc.user/gettingStarted/qs-36a.htm?cp=0_1_0_11_0
+        http://help.eclipse.org/mars/topic/org.eclipse.platform.doc.user/gettingStarted/qs-36b.htm?cp=0_1_0_11_1
+    Providing arguments to programs (args[] of psvm)
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/tasks/tasks-executionArgs.htm?cp=1_3_6_6
+    Refactoring Actions
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/reference/ref-menu-refactor.htm
+    Debugging
+        http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-2.htm&cp=1_1_0_0
+    Conditional Break Points
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/tasks/task-manage_conditional_breakpoint.htm
+    Stepping Through
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/tasks/task-stepping.htm
+    Tips and Tricks - Must read (better read, after reading other sections)
+        http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/tips/jdt_tips.html?cp=1_5
+        This will help a lot with learning Java too
+    Productivity Tips
+        https://dzone.com/articles/15-productivity-tips-for-eclipse-java-ide-users
+
+
+    Strictly if you have finished learning other features
+        Jars
+            http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.user/tasks/tasks-37.htm?cp=1_3_1_4
+        Glimpse of How eclipse is improving, making data entry far easier, and the coder, dumper
+            https://www.eclipse.org/eclipse/news/4.4/eclipse-news-part2.php
+            https://www.eclipse.org/eclipse/news/4.5/jdt.php
+            https://www.eclipse.org/eclipse/news/4.6/jdt.php
+            https://www.eclipse.org/eclipse/news/4.7/jdt.php
+            https://www.eclipse.org/eclipse/news/4.8/jdt.php
+
+
+
+
+Disclaimer : http://www.objectfrontier.com/maildisclaimer.html
+
+04.eclipse.txt
+
+- include Java Reflection Exercise
+
+- Overview
+    - Project space
+    - Workspace
+    - Views
+    - Perspective
+
+Features
+- Project
+    - Creating new Java project(ctrl + n)
+    - Project properties(Alt + Enter)
+    - Build path
+        - Add libs
+        - Add jars
+    - Add lib source
+
+- Editing
+    - Autocomplete(Ctrl + Space)
+    - Organize imports(Ctrl + Shift + o)
+    - Template
+    - Quickfix(Ctrl + 1)
+    - Docs
+        - Comment(Ctrl + / OR Ctrl + Shift + /)
+        - Java doc(/**)
+        - TODO (//TODO: )
+    - Rename(F2)
+    - Refactor(Alt + Shift + r)
+    - Find and replace(Ctrl + f)
+    - Extract to local variable(Alt + Shift + l)
+    - Extract to a method(Alt + Shift + m)
+    - Local history
+    - Surround with try catch(Alt + Shift + z, r)
+
+- Navigation
+    - File links(Ctrl + left click OR F3)
+    - Open Java file(Ctrl + Shift + t)
+    - Open Resource(Ctrl + Shift + r)
+    - File search(Ctrl + h)
+    - Go back & forth of mouse click paths(Alt + Right AND Alt + Left)
+    - Call hierarchy(ctrl + Alt + h)
+    - References(Ctrl + Shift + g)
+    - Next / prev error(Ctrl + . AND Ctrl + ,)
+
+- Run
+    - Run as(Alt + Shift + x, j)
+    - Run recently ran(Ctrl + F11)
+    - run config
+
+- Debug
+    - debug config
+    - Debug as(Alt + Shift + d, j)
+    - Debug recently ran(F11)
+    - breakpoint
+        - with / without condition
+        - skip all breakpoints
+        - remove all breakpoints
+        - debug
+            - next line(F6)
+            - next breakpoint(F8)
+            - into the next statement(F5)
+    - drop to the frame
+    - Variables
+    - Expressions
+    - change code on debug
+        - build project automatically
+
+- Tools
+    - Quick access(Ctrl + 3)
+    - find / change shortcuts 
+
