@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SANGAM</title>
+    <link rel="stylesheet" href="SangamStyle.css" />
+  </head>
+
+  <body>
+
+  <header id="header" ></header>
+
+    <section id="aside">
+    <ul>
+      <li><img src="plus.png" /><p class="listElements">add group</p></li>
+      <li><img src="home.png" /><p class="listElements">home</p></li>
+    <ul>
+    </section>
+    <section class="content"></section>
+
+    <footer>
+    <p id="year"><b>© 2017-2020</b>
+    <a target="_blank" href="D:\dev\training\\ui\html\Sangam.html"><b>OFS.</b></a>
+    All rights reserved.</p>
+  </footer>
+
+  </body>
+
+</html>
+
+
+
+body {
+  margin: 0;
+  background-color: #ECF0F5;
+  padding-bottom: 20px;
+}
+
+.content {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#header {
+  
+  background-color: #3C8DBC;
+  padding: 25px;
+}
+
+#aside {
+  position: fixed;
+  background-color: #F9FAFC;
+  width: 50px;
+  height: 900px;
+
+}
+ul {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: block;
+  color: #808080;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+.listElements {
+  display: none;
+}
+
+li:hover {
+  display: block;
+  background-color: #DDDDDD;
+  color: white;
+}
+
+#year {
+  color: #000000;
+  font-size: 13px;
+  align: left;
+}
+
+footer {
+  position: fixed;
+  left: 2.6%;
+  bottom: 0%;
+  width: 100%;
+  background-color: #FEFEFE;
+  color: #616161;
+  text-align: left;
+  height: 4%;
+}
+
+a {
+  color: #3C8DBC;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F01111;
+}
